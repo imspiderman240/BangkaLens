@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksplor Penjasa - Bangka Lens & Edit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600 tracking-tight">BangkaLens</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                    <a href="explore.html" class="text-indigo-600 font-bold">Eksplor</a>
+                    <a href="jobs.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Lowongan</a>
+                    <a href="login.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Masuk</a>
+                    <a href="login.html" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition-all shadow-md active:scale-95">Daftar</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-indigo-600">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-slate-600 font-medium">Home</a>
+                <a href="explore.html" class="block px-3 py-2 text-indigo-600 font-bold">Eksplor</a>
+                <a href="jobs.html" class="block px-3 py-2 text-slate-600 font-medium">Lowongan</a>
+                <div class="pt-4 pb-2 border-t border-slate-100 flex flex-col gap-2 px-3">
+                    <a href="login.html" class="text-indigo-600 font-semibold mb-2">Masuk</a>
+                    <a href="login.html" class="bg-indigo-600 text-white text-center py-2 rounded-lg font-semibold">Daftar Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-8">
+            
+            <!-- SIDEBAR FILTERS -->
+            <aside class="w-full md:w-64 space-y-8 flex-shrink-0">
+                <div>
+                    <h1 class="text-2xl font-bold mb-2">Eksplor</h1>
+                    <p class="text-slate-500 text-sm italic">Temukan bakat terbaik untuk kebutuhan Anda.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                    <!-- Filter Category -->
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <i data-lucide="layers" class="w-4 h-4 text-indigo-600"></i> Kategori
+                        </h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" checked>
+                                <span class="text-slate-700 group-hover:text-indigo-600 transition-colors">Fotografer Wedding</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                                <span class="text-slate-700 group-hover:text-indigo-600 transition-colors">Editor Video</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                                <span class="text-slate-700 group-hover:text-indigo-600 transition-colors">Fotografer Produk</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                                <span class="text-slate-700 group-hover:text-indigo-600 transition-colors">Drone Pilot</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filter Location -->
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-indigo-600"></i> Lokasi (Bangka)
+                        </h3>
+                        <select class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                            <option>Semua Wilayah</option>
+                            <option>Pangkalpinang</option>
+                            <option>Sungailiat</option>
+                            <option>Koba</option>
+                            <option>Toboali</option>
+                            <option>Muntok</option>
+                            <option>Belinyu</option>
+                        </select>
+                    </div>
+
+                    <!-- Filter Budget -->
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <i data-lucide="banknote" class="w-4 h-4 text-indigo-600"></i> Rentang Harga
+                        </h3>
+                        <div class="space-y-4">
+                            <input type="range" class="w-full accent-indigo-600">
+                            <div class="flex justify-between text-xs font-bold text-slate-500">
+                                <span>Rp 0</span>
+                                <span>Rp 10jt+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-md">
+                        Terapkan Filter
+                    </button>
+                </div>
+            </aside>
+
+            <!-- RESULTS GRID -->
+            <div class="flex-1">
+                <!-- Search & Sort Bar -->
+                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm mb-8 flex flex-col sm:flex-row gap-4 items-center justify-between">
+                    <div class="relative w-full sm:w-auto flex-1">
+                        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4"></i>
+                        <input type="text" placeholder="Cari nama atau jasa..." class="w-full pl-10 pr-4 py-2 bg-slate-50 rounded-xl outline-none border border-transparent focus:border-indigo-500 transition-all">
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto">
+                        <span class="text-sm text-slate-500 whitespace-nowrap">Urutkan:</span>
+                        <select class="p-2 bg-slate-50 rounded-lg outline-none text-sm font-bold border-none">
+                            <option>Terbaru</option>
+                            <option>Rating Tertinggi</option>
+                            <option>Harga Terendah</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Cards Dummy Data -->
+                    <script>
+                        const creators = [
+                            { name: 'Felix Chandra', role: 'Fotografer Wedding', loc: 'Pangkalpinang', price: '1.5jt', seed: 'Felix', img: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=600' },
+                            { name: 'Maya Lestari', role: 'Fotografer Produk', loc: 'Sungailiat', price: '500rb', seed: 'Maya', img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600' },
+                            { name: 'Andi Wijaya', role: 'Editor Video & Drone', loc: 'Koba', price: '750rb', seed: 'Andi', img: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&q=80&w=600' },
+                            { name: 'Siska Pratama', role: 'Fotografer Event', loc: 'Pangkalpinang', price: '1jt', seed: 'Siska', img: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600' },
+                            { name: 'Riky Kurniawan', role: 'Videografer Wedding', loc: 'Belinyu', price: '2.5jt', seed: 'Riky', img: 'https://images.unsplash.com/photo-1492691523565-351052277d3f?auto=format&fit=crop&q=80&w=600' },
+                            { name: 'Dian Safitri', role: 'Banyak Model & Foto Produk', loc: 'Muntok', price: '600rb', seed: 'Dian', img: 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&q=80&w=600' },
+                        ];
+
+                        document.write(creators.map(c => `
+                            <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                                <div class="h-48 overflow-hidden relative">
+                                    <img src="${c.img}" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute top-3 left-3 flex gap-2">
+                                        <span class="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-indigo-700 shadow-sm">${c.role.split(' ')[1]}</span>
+                                    </div>
+                                    <div class="absolute bottom-3 right-3">
+                                        <div class="bg-indigo-600 text-white p-2 rounded-full shadow-lg">
+                                            <i data-lucide="star" class="w-3 h-3 fill-current text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=${c.seed}" alt="Avatar" class="w-12 h-12 rounded-full border-2 border-white shadow-sm ring-2 ring-slate-50">
+                                        <div>
+                                            <h3 class="font-bold text-slate-900">${c.name}</h3>
+                                            <div class="flex items-center text-xs text-slate-500 gap-1">
+                                                <i data-lucide="map-pin" class="w-3 h-3"></i> ${c.loc}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-slate-500 mb-4 line-clamp-2">Jasa profesional berpengalaman dengan hasil yang memuaskan dan harga terjangkau.</p>
+                                    <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                                        <div>
+                                            <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Mulai dari</div>
+                                            <div class="text-indigo-600 font-bold">Rp ${c.price}</div>
+                                        </div>
+                                        <a href="profile.html" class="px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-xl hover:bg-indigo-600 hover:text-white transition-all">Profil</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join(''));
+                    </script>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-12 flex justify-center gap-2">
+                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:text-indigo-600 transition-all"><i data-lucide="chevron-left"></i></button>
+                    <button class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold">1</button>
+                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-white hover:text-indigo-600 transition-all font-bold">2</button>
+                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-white hover:text-indigo-600 transition-all font-bold">3</button>
+                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:text-indigo-600 transition-all"><i data-lucide="chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white pt-10 pb-10 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm">&copy; 2026 BangkaLens. All rights reserved. Made for Bangka.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

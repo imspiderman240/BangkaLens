@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowongan Kerja - Bangka Lens & Edit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600 tracking-tight">BangkaLens</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                    <a href="explore.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Eksplor</a>
+                    <a href="jobs.html" class="text-indigo-600 font-bold">Lowongan</a>
+                    <a href="login.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Masuk</a>
+                    <a href="login.html" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition-all shadow-md active:scale-95">Daftar</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-indigo-600">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12">
+            <div>
+                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Lowongan Kerja</h1>
+                <p class="text-slate-500">Cari project fotografi dan editing terbaru di Bangka.</p>
+            </div>
+            <a href="create-job.html" class="bg-indigo-600 text-white px-6 py-3 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100 flex items-center gap-2 active:scale-95">
+                <i data-lucide="plus-circle" class="w-5 h-5"></i> Pasang Lowongan
+            </a>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="flex overflow-x-auto gap-3 mb-8 pb-2 scrollbar-none">
+            <button class="whitespace-nowrap px-6 py-2 bg-slate-900 text-white rounded-full text-sm font-bold">Semua Project</button>
+            <button class="whitespace-nowrap px-6 py-2 bg-white text-slate-600 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-50">Wedding</button>
+            <button class="whitespace-nowrap px-6 py-2 bg-white text-slate-600 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-50">Produk</button>
+            <button class="whitespace-nowrap px-6 py-2 bg-white text-slate-600 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-50">Video Editing</button>
+            <button class="whitespace-nowrap px-6 py-2 bg-white text-slate-600 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-50">Drone Service</button>
+        </div>
+
+        <!-- JOB LIST -->
+        <div class="space-y-6">
+            <!-- Job Card 1 -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:border-indigo-600 transition-all group">
+                <div class="flex flex-col md:flex-row justify-between gap-6">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-[10px] font-bold rounded-full uppercase tracking-wider">Wedding</span>
+                            <span class="text-slate-400 text-sm">• 2 jam yang lalu</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Fotografer Wedding Akad & Resepsi</h3>
+                        <p class="text-slate-500 text-sm mb-4 line-clamp-2">Dibutuhkan fotografer untuk acara akad nikah dan resepsi di Sungailiat. Konsep modern minimalis, butuh hasil yang clean.</p>
+                        
+                        <div class="flex flex-wrap gap-4 text-sm text-slate-600 font-medium">
+                            <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-slate-400"></i> Sungailiat, Bangka
+                            </div>
+                            <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg">
+                                <i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i> 12 Juni 2026
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between items-end min-w-[150px]">
+                        <div class="text-right">
+                            <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">Budget</div>
+                            <div class="text-xl font-extrabold text-slate-900 uppercase">Rp 2.500.000</div>
+                        </div>
+                        <button class="w-full md:w-auto bg-slate-100 text-slate-700 px-8 py-3 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition-all shadow-sm">Lamar / Hubungi</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:border-indigo-600 transition-all group">
+                <div class="flex flex-col md:flex-row justify-between gap-6">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-3 py-1 bg-amber-50 text-amber-700 text-[10px] font-bold rounded-full uppercase tracking-wider">Video Editing</span>
+                            <span class="text-slate-400 text-sm">• 5 jam yang lalu</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Editor Video Reels Instagram (Batch 10 Video)</h3>
+                        <p class="text-slate-500 text-sm mb-4 line-clamp-2">Mencari editor video yang bisa edit konten reels untuk cafe di Pangkalpinang. Style asik, trendy, dan fast-paced.</p>
+                        
+                        <div class="flex flex-wrap gap-4 text-sm text-slate-600 font-medium">
+                            <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-slate-400"></i> Remote / Pangkalpinang
+                            </div>
+                            <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg">
+                                <i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i> Fleksibel
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between items-end min-w-[150px]">
+                        <div class="text-right">
+                            <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">Budget</div>
+                            <div class="text-xl font-extrabold text-slate-900 uppercase">Rp 800.000</div>
+                        </div>
+                        <button class="w-full md:w-auto bg-slate-100 text-slate-700 px-8 py-3 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition-all shadow-sm">Lamar / Hubungi</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:border-indigo-600 transition-all group">
+                <div class="flex flex-col md:flex-row justify-between gap-6">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-bold rounded-full uppercase tracking-wider">Event</span>
+                            <span class="text-slate-400 text-sm">• Kemarin</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Fotografer Dokumentasi Seminar Nasional</h3>
+                        <p class="text-slate-500 text-sm mb-4 line-clamp-2">Butuh fotografer untuk mendokumentasikan acara seminar 1 hari penuh di Koba. Fokus ke foto narasumber dan suasana.</p>
+                        
+                        <div class="flex flex-wrap gap-4 text-sm text-slate-600 font-medium">
+                            <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-slate-400"></i> Koba, Bangka Tengah
+                            </div>
+                            <div class="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg">
+                                <i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i> 20 Mei 2026
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between items-end min-w-[150px]">
+                        <div class="text-right">
+                            <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider mb-1">Budget</div>
+                            <div class="text-xl font-extrabold text-slate-900 uppercase">Rp 1.000.000</div>
+                        </div>
+                        <button class="w-full md:w-auto bg-slate-100 text-slate-700 px-8 py-3 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition-all shadow-sm">Lamar / Hubungi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <button class="bg-indigo-50 text-indigo-600 px-8 py-3 rounded-2xl font-bold hover:bg-indigo-100 transition-colors">Tampilkan Lebih Banyak</button>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white pt-10 pb-10 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm">&copy; 2026 BangkaLens. All rights reserved. Made for Bangka.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

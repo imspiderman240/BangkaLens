@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasang Lowongan - Bangka Lens & Edit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600 tracking-tight">BangkaLens</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                    <a href="explore.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Eksplor</a>
+                    <a href="jobs.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Lowongan</a>
+                    <a href="login.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Masuk</a>
+                    <a href="login.html" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition-all shadow-md active:scale-95">Daftar</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-indigo-600">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-3xl flex items-center justify-center mb-4">
+                <i data-lucide="send" class="w-8 h-8"></i>
+            </div>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Pasang Lowongan Pekerjaan</h1>
+            <p class="text-slate-500 mt-2">Sampaikan kebutuhan visual Anda dan dapatkan penawaran dari para profesional terbaik.</p>
+        </div>
+
+        <form class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl space-y-6">
+            <!-- Title -->
+            <div class="space-y-2">
+                <label class="block text-sm font-bold text-slate-700">Judul Pekerjaan</label>
+                <input type="text" placeholder="Contoh: Butuh Fotografer Wedding di Pangkalpinang" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+            </div>
+
+            <!-- Description -->
+            <div class="space-y-2">
+                <label class="block text-sm font-bold text-slate-700">Deskripsi Pekerjaan</label>
+                <textarea rows="4" placeholder="Jelaskan detail kebutuhan Anda, konsep, durasi, dll..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Location -->
+                <div class="space-y-2">
+                    <label class="block text-sm font-bold text-slate-700">Lokasi</label>
+                    <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                        <option>Pangkalpinang</option>
+                        <option>Sungailiat</option>
+                        <option>Koba</option>
+                        <option>Toboali</option>
+                        <option>Muntok</option>
+                    </select>
+                </div>
+                <!-- Category -->
+                <div class="space-y-2">
+                    <label class="block text-sm font-bold text-slate-700">Kategori</label>
+                    <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                        <option>Wedding & Engagement</option>
+                        <option>Foto Produk</option>
+                        <option>Event & Dokumentasi</option>
+                        <option>Video Editing</option>
+                        <option>Drone Photography</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Budget -->
+                <div class="space-y-2">
+                    <label class="block text-sm font-bold text-slate-700">Budget (Estimasi)</label>
+                    <div class="relative">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">Rp</span>
+                        <input type="number" placeholder="500.000" class="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                    </div>
+                </div>
+                <!-- Date -->
+                <div class="space-y-2">
+                    <label class="block text-sm font-bold text-slate-700">Tanggal Acara</label>
+                    <input type="date" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                </div>
+            </div>
+
+            <!-- Photos -->
+            <div class="space-y-2">
+                <label class="block text-sm font-bold text-slate-700">Referensi Visual (Opsional)</label>
+                <div class="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:border-indigo-400 transition-colors cursor-pointer group">
+                    <i data-lucide="image" class="w-10 h-10 text-slate-300 mx-auto mb-2 group-hover:text-indigo-400"></i>
+                    <p class="text-sm text-slate-400">Klik untuk upload atau drag & drop gambar</p>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-2 active:scale-95">
+                Posting Lowongan Sekarang
+            </button>
+            <p class="text-xs text-center text-slate-400">Dengan menekan tombol di atas, Anda menyetujui Syarat & Ketentuan kami.</p>
+        </form>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white pt-10 pb-10 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm">&copy; 2026 BangkaLens. All rights reserved. Made for Bangka.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
