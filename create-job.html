@@ -16,114 +16,130 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-900 text-slate-100 overflow-x-hidden">
+
+    <!-- BACKGROUND WRAPPER -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&q=80&w=1920" 
+             alt="Background" 
+             class="w-full h-full object-cover opacity-40 brightness-75">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-indigo-900/40 to-slate-900/80 backdrop-blur-[4px]"></div>
+    </div>
 
     <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200">
+    <nav class="fixed w-full z-50 border-b border-white/10 bg-black/40 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center gap-2">
-                    <a href="index.html" class="text-2xl font-bold text-indigo-600 tracking-tight">BangkaLens</a>
+                    <a href="index.html" class="text-2xl font-bold text-white tracking-tight">Bangka<span class="text-indigo-400">Lens</span></a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
-                    <a href="explore.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Eksplor</a>
-                    <a href="jobs.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Lowongan</a>
-                    <a href="login.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Masuk</a>
-                    <a href="login.html" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition-all shadow-md active:scale-95">Daftar</a>
+                <div class="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-2xl border border-white/10">
+                    <a href="index.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium">Home</a>
+                    <a href="explore.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium">Eksplor</a>
+                    <a href="jobs.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium">Lowongan</a>
+                    <a href="login.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium">Masuk</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-slate-600 hover:text-indigo-600">
+                    <button id="mobile-menu-button" class="text-white hover:text-indigo-400">
                         <i data-lucide="menu"></i>
                     </button>
                 </div>
             </div>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-white/10 backdrop-blur-xl animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block px-4 py-3 text-white/60 hover:text-white hover:bg-white/5 rounded-xl font-medium transition-all">Home</a>
+                <a href="explore.html" class="block px-4 py-3 text-white/60 hover:text-white hover:bg-white/5 rounded-xl font-medium transition-all">Eksplor</a>
+                <a href="jobs.html" class="block px-4 py-3 text-white/60 hover:text-white hover:bg-white/5 rounded-xl font-medium transition-all">Lowongan</a>
+                <a href="login.html" class="block px-4 py-3 text-indigo-400 font-bold hover:bg-indigo-500/10 rounded-xl transition-all">Masuk</a>
+            </div>
+        </div>
     </nav>
 
-    <main class="pt-24 pb-20 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main class="relative z-10 pt-24 pb-20 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-10 flex flex-col items-center text-center">
-            <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-3xl flex items-center justify-center mb-4">
-                <i data-lucide="send" class="w-8 h-8"></i>
+            <div class="w-20 h-20 bg-indigo-500/20 text-indigo-400 rounded-3xl flex items-center justify-center mb-6 border border-indigo-500/30">
+                <i data-lucide="send" class="w-10 h-10"></i>
             </div>
-            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Pasang Lowongan Pekerjaan</h1>
-            <p class="text-slate-500 mt-2">Sampaikan kebutuhan visual Anda dan dapatkan penawaran dari para profesional terbaik.</p>
+            <h1 class="text-4xl font-extrabold text-white tracking-tight">Pasang Lowongan</h1>
+            <p class="text-white/50 mt-4 text-lg">Sampaikan kebutuhan visual Anda dan dapatkan penawaran dari para profesional terbaik.</p>
         </div>
 
-        <form class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl space-y-6">
+        <form class="bg-white/10 backdrop-blur-2xl p-10 rounded-3xl border border-white/10 shadow-2xl space-y-8">
             <!-- Title -->
-            <div class="space-y-2">
-                <label class="block text-sm font-bold text-slate-700">Judul Pekerjaan</label>
-                <input type="text" placeholder="Contoh: Butuh Fotografer Wedding di Pangkalpinang" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+            <div class="space-y-3">
+                <label class="block text-sm font-bold text-white/50 uppercase tracking-wider">Judul Pekerjaan</label>
+                <input type="text" placeholder="Contoh: Butuh Fotografer Wedding di Pangkalpinang" class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-white placeholder:text-white/20">
             </div>
 
             <!-- Description -->
-            <div class="space-y-2">
-                <label class="block text-sm font-bold text-slate-700">Deskripsi Pekerjaan</label>
-                <textarea rows="4" placeholder="Jelaskan detail kebutuhan Anda, konsep, durasi, dll..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"></textarea>
+            <div class="space-y-3">
+                <label class="block text-sm font-bold text-white/50 uppercase tracking-wider">Deskripsi Pekerjaan</label>
+                <textarea rows="4" placeholder="Jelaskan detail kebutuhan Anda, konsep, durasi, dll..." class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-white placeholder:text-white/20"></textarea>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <!-- Location -->
-                <div class="space-y-2">
-                    <label class="block text-sm font-bold text-slate-700">Lokasi</label>
-                    <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
-                        <option>Pangkalpinang</option>
-                        <option>Sungailiat</option>
-                        <option>Koba</option>
-                        <option>Toboali</option>
-                        <option>Muntok</option>
+                <div class="space-y-3">
+                    <label class="block text-sm font-bold text-white/50 uppercase tracking-wider">Lokasi</label>
+                    <select class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-white">
+                        <option class="bg-slate-900">Pangkalpinang</option>
+                        <option class="bg-slate-900">Sungailiat</option>
+                        <option class="bg-slate-900">Koba</option>
+                        <option class="bg-slate-900">Toboali</option>
+                        <option class="bg-slate-900">Muntok</option>
                     </select>
                 </div>
                 <!-- Category -->
-                <div class="space-y-2">
-                    <label class="block text-sm font-bold text-slate-700">Kategori</label>
-                    <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
-                        <option>Wedding & Engagement</option>
-                        <option>Foto Produk</option>
-                        <option>Event & Dokumentasi</option>
-                        <option>Video Editing</option>
-                        <option>Drone Photography</option>
+                <div class="space-y-3">
+                    <label class="block text-sm font-bold text-white/50 uppercase tracking-wider">Kategori</label>
+                    <select class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-white">
+                        <option class="bg-slate-900">Wedding & Engagement</option>
+                        <option class="bg-slate-900">Foto Produk</option>
+                        <option class="bg-slate-900">Event & Dokumentasi</option>
+                        <option class="bg-slate-900">Video Editing</option>
+                        <option class="bg-slate-900">Drone Photography</option>
                     </select>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <!-- Budget -->
-                <div class="space-y-2">
-                    <label class="block text-sm font-bold text-slate-700">Budget (Estimasi)</label>
+                <div class="space-y-3">
+                    <label class="block text-sm font-bold text-white/50 uppercase tracking-wider">Budget (Estimasi)</label>
                     <div class="relative">
-                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">Rp</span>
-                        <input type="number" placeholder="500.000" class="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                        <span class="absolute left-5 top-1/2 -translate-y-1/2 text-indigo-400 font-bold">Rp</span>
+                        <input type="number" placeholder="500.000" class="w-full pl-14 pr-5 py-4 bg-white/5 border border-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-white placeholder:text-white/20">
                     </div>
                 </div>
                 <!-- Date -->
-                <div class="space-y-2">
-                    <label class="block text-sm font-bold text-slate-700">Tanggal Acara</label>
-                    <input type="date" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                <div class="space-y-3">
+                    <label class="block text-sm font-bold text-white/50 uppercase tracking-wider">Tanggal Acara</label>
+                    <input type="date" class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-white">
                 </div>
             </div>
 
             <!-- Photos -->
-            <div class="space-y-2">
-                <label class="block text-sm font-bold text-slate-700">Referensi Visual (Opsional)</label>
-                <div class="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:border-indigo-400 transition-colors cursor-pointer group">
-                    <i data-lucide="image" class="w-10 h-10 text-slate-300 mx-auto mb-2 group-hover:text-indigo-400"></i>
-                    <p class="text-sm text-slate-400">Klik untuk upload atau drag & drop gambar</p>
+            <div class="space-y-3">
+                <label class="block text-sm font-bold text-white/50 uppercase tracking-wider">Referensi Visual (Opsional)</label>
+                <div class="border-2 border-dashed border-white/10 rounded-2xl p-10 text-center hover:border-indigo-400 transition-all cursor-pointer group bg-white/5">
+                    <i data-lucide="image" class="w-12 h-12 text-white/10 mx-auto mb-4 group-hover:text-indigo-400 transition-colors"></i>
+                    <p class="text-sm text-white/30">Klik untuk upload atau drag & drop gambar</p>
                 </div>
             </div>
 
-            <button type="submit" class="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-2 active:scale-95">
-                Posting Lowongan Sekarang
+            <button type="submit" class="w-full bg-indigo-600 text-white py-5 rounded-2xl font-bold text-lg hover:bg-indigo-500 transition-all duration-300 shadow-xl hover:shadow-indigo-500/40 hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+                <i data-lucide="plus-circle" class="w-6 h-6"></i> Posting Sekarang
             </button>
-            <p class="text-xs text-center text-slate-400">Dengan menekan tombol di atas, Anda menyetujui Syarat & Ketentuan kami.</p>
+            <p class="text-xs text-center text-white/30">Dengan menekan tombol di atas, Anda menyetujui Syarat & Ketentuan kami.</p>
         </form>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-white pt-10 pb-10 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-400 text-sm">&copy; 2026 BangkaLens. All rights reserved. Made for Bangka.</p>
+    <footer class="bg-slate-950 pt-20 pb-12 border-t border-white/5 relative z-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-white/40 text-sm">&copy; 2026 BangkaLens. All rights reserved. Made for Bangka.</p>
         </div>
     </footer>
 
@@ -137,5 +153,6 @@
             });
         }
     </script>
+    <script type="module" src="/chatbot.js"></script>
 </body>
 </html>

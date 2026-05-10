@@ -16,198 +16,211 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-900 text-slate-100 overflow-x-hidden">
+
+    <!-- BACKGROUND WRAPPER -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&q=80&w=1920" 
+             alt="Background" 
+             class="w-full h-full object-cover opacity-40 brightness-75">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-indigo-900/40 to-slate-900/80 backdrop-blur-[4px]"></div>
+    </div>
 
     <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200">
+    <nav class="fixed w-full z-50 border-b border-white/10 bg-black/40 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center gap-2">
-                    <a href="index.html" class="text-2xl font-bold text-indigo-600 tracking-tight">BangkaLens</a>
+                    <a href="index.html" class="text-2xl font-bold text-white tracking-tight">Bangka<span class="text-indigo-400">Lens</span></a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
-                    <a href="explore.html" class="text-indigo-600 font-bold">Eksplor</a>
-                    <a href="jobs.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Lowongan</a>
-                    <a href="login.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Masuk</a>
-                    <a href="login.html" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition-all shadow-md active:scale-95">Daftar</a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-2xl border border-white/10">
+                    <a href="index.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium hover:-translate-y-0.5 active:scale-95">Home</a>
+                    <a href="explore.html" class="px-5 py-2 text-indigo-400 font-bold bg-white/10 rounded-xl transition-all duration-300 hover:-translate-y-0.5 active:scale-95">Eksplor</a>
+                    <a href="jobs.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium hover:-translate-y-0.5 active:scale-95">Lowongan</a>
+                    <a href="login.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium hover:-translate-y-0.5 active:scale-95">Masuk</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-slate-600 hover:text-indigo-600">
+                    <button id="mobile-menu-button" class="text-white hover:text-indigo-400">
                         <i data-lucide="menu"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block px-3 py-2 text-slate-600 font-medium">Home</a>
-                <a href="explore.html" class="block px-3 py-2 text-indigo-600 font-bold">Eksplor</a>
-                <a href="jobs.html" class="block px-3 py-2 text-slate-600 font-medium">Lowongan</a>
-                <div class="pt-4 pb-2 border-t border-slate-100 flex flex-col gap-2 px-3">
-                    <a href="login.html" class="text-indigo-600 font-semibold mb-2">Masuk</a>
-                    <a href="login.html" class="bg-indigo-600 text-white text-center py-2 rounded-lg font-semibold">Daftar Sekarang</a>
-                </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-white/10 backdrop-blur-xl animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block px-4 py-3 text-white/60 hover:text-white hover:bg-white/5 rounded-xl font-medium transition-all">Home</a>
+                <a href="explore.html" class="block px-4 py-3 text-white bg-white/10 rounded-xl font-bold">Eksplor</a>
+                <a href="jobs.html" class="block px-4 py-3 text-white/60 hover:text-white hover:bg-white/5 rounded-xl font-medium transition-all">Lowongan</a>
+                <a href="login.html" class="block px-4 py-3 text-indigo-400 font-bold hover:bg-indigo-500/10 rounded-xl transition-all">Masuk</a>
             </div>
         </div>
     </nav>
 
-    <main class="pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row gap-8">
-            
-            <!-- SIDEBAR FILTERS -->
-            <aside class="w-full md:w-64 space-y-8 flex-shrink-0">
-                <div>
-                    <h1 class="text-2xl font-bold mb-2">Eksplor</h1>
-                    <p class="text-slate-500 text-sm italic">Temukan bakat terbaik untuk kebutuhan Anda.</p>
-                </div>
+    <main class="relative z-10 pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+
+        <!-- SEARCH & FILTER AREA -->
+        <div class="flex flex-col gap-4 mb-12">
+            <div class="bg-white/10 backdrop-blur-xl p-4 md:p-5 rounded-[2rem] border border-white/10 shadow-2xl flex flex-col sm:flex-row gap-4 items-center justify-between">
+                <form action="explore.html" method="GET" class="relative w-full sm:w-auto flex-1 group">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/40 w-5 h-5 group-focus-within:text-indigo-400 transition-colors"></i>
+                    <input type="text" name="q" id="search-input" placeholder="Cari nama, jasa, atau lokasi..." class="w-full pl-12 pr-12 py-3 bg-white/5 rounded-2xl outline-none border border-transparent focus:border-indigo-500 transition-all text-white placeholder:text-white/20">
+                    <button type="button" id="filter-toggle" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-indigo-400 transition-all duration-300 p-1 hover:bg-white/5 rounded-lg active:scale-95 hover:-translate-y-[55%]">
+                        <i data-lucide="sliders-horizontal" class="w-5 h-5"></i>
+                    </button>
+                </form>
+                <div class="flex items-center gap-3 w-full sm:w-auto">
+                    <span class="text-sm text-white/40 font-bold uppercase tracking-wider whitespace-nowrap">Urutan</span>
+                    <select class="px-4 py-3 bg-white/5 rounded-2xl outline-none text-sm font-bold border border-white/10 text-white focus:border-indigo-500 transition-all">
+                        <option class="bg-slate-900">Terbaru</option>
+                        <option class="bg-slate-900">Harga Terendah</option>
+                        <option class="bg-slate-900">Rating Tertinggi</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- HIDDEN FILTER PANEL -->
+            <div id="filter-panel" class="hidden animate-in fade-in slide-in-from-top-4 duration-300 bg-white/10 backdrop-blur-xl p-8 rounded-[2rem] border border-white/10 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <!-- Filter Category -->
                     <div>
-                        <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <i data-lucide="layers" class="w-4 h-4 text-indigo-600"></i> Kategori
+                        <h3 class="font-bold text-white mb-6 flex items-center gap-2 text-lg">
+                            <i data-lucide="layers" class="w-5 h-5 text-indigo-400"></i> Pilih Kategori
                         </h3>
-                        <div class="space-y-3">
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" checked>
-                                <span class="text-slate-700 group-hover:text-indigo-600 transition-colors">Fotografer Wedding</span>
+                        <div class="grid grid-cols-2 gap-4">
+                            <label class="flex items-center gap-3 cursor-pointer group p-3 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all">
+                                <input type="checkbox" class="w-5 h-5 rounded border-white/20 bg-white/5 text-indigo-500 focus:ring-indigo-500" checked>
+                                <span class="text-white/60 group-hover:text-white transition-colors font-medium">Wedding</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
-                                <span class="text-slate-700 group-hover:text-indigo-600 transition-colors">Editor Video</span>
+                            <label class="flex items-center gap-3 cursor-pointer group p-3 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all">
+                                <input type="checkbox" class="w-5 h-5 rounded border-white/20 bg-white/5 text-indigo-500 focus:ring-indigo-500">
+                                <span class="text-white/60 group-hover:text-white transition-colors font-medium">Video Editor</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
-                                <span class="text-slate-700 group-hover:text-indigo-600 transition-colors">Fotografer Produk</span>
+                            <label class="flex items-center gap-3 cursor-pointer group p-3 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all">
+                                <input type="checkbox" class="w-5 h-5 rounded border-white/20 bg-white/5 text-indigo-500 focus:ring-indigo-500">
+                                <span class="text-white/60 group-hover:text-white transition-colors font-medium">Foto Produk</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
-                                <span class="text-slate-700 group-hover:text-indigo-600 transition-colors">Drone Pilot</span>
+                            <label class="flex items-center gap-3 cursor-pointer group p-3 bg-white/5 rounded-xl border border-transparent hover:border-white/10 transition-all">
+                                <input type="checkbox" class="w-5 h-5 rounded border-white/20 bg-white/5 text-indigo-500 focus:ring-indigo-500">
+                                <span class="text-white/60 group-hover:text-white transition-colors font-medium">Drone pilot</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- Filter Location -->
                     <div>
-                        <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-indigo-600"></i> Lokasi (Bangka)
+                        <h3 class="font-bold text-white mb-6 flex items-center gap-2 text-lg">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-indigo-400"></i> Wilayah Bangka
                         </h3>
-                        <select class="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
-                            <option>Semua Wilayah</option>
-                            <option>Pangkalpinang</option>
-                            <option>Sungailiat</option>
-                            <option>Koba</option>
-                            <option>Toboali</option>
-                            <option>Muntok</option>
-                            <option>Belinyu</option>
-                        </select>
-                    </div>
-
-                    <!-- Filter Budget -->
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <i data-lucide="banknote" class="w-4 h-4 text-indigo-600"></i> Rentang Harga
-                        </h3>
-                        <div class="space-y-4">
-                            <input type="range" class="w-full accent-indigo-600">
-                            <div class="flex justify-between text-xs font-bold text-slate-500">
-                                <span>Rp 0</span>
-                                <span>Rp 10jt+</span>
-                            </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <select class="col-span-2 w-full p-4 bg-white/5 border border-white/10 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-white font-medium">
+                                <option class="bg-slate-900">Semua Wilayah</option>
+                                <option class="bg-slate-900">Pangkalpinang</option>
+                                <option class="bg-slate-900">Sungailiat</option>
+                                <option class="bg-slate-900">Koba</option>
+                                <option class="bg-slate-900">Toboali</option>
+                                <option class="bg-slate-900">Muntok</option>
+                            </select>
                         </div>
                     </div>
+                </div>
 
-                    <button class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-md">
+                <div class="mt-10 flex justify-end gap-4">
+                    <button id="filter-reset" type="button" class="px-6 py-3 text-white/50 font-bold hover:text-white transition-all duration-300 hover:-translate-y-1 active:scale-95">Reset</button>
+                    <button class="bg-indigo-600 text-white px-10 py-3 rounded-2xl font-bold hover:bg-indigo-500 transition-all duration-300 shadow-xl hover:shadow-indigo-500/40 hover:-translate-y-1 active:scale-95">
                         Terapkan Filter
                     </button>
                 </div>
-            </aside>
+            </div>
+        </div>
 
-            <!-- RESULTS GRID -->
-            <div class="flex-1">
-                <!-- Search & Sort Bar -->
-                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm mb-8 flex flex-col sm:flex-row gap-4 items-center justify-between">
-                    <div class="relative w-full sm:w-auto flex-1">
-                        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4"></i>
-                        <input type="text" placeholder="Cari nama atau jasa..." class="w-full pl-10 pr-4 py-2 bg-slate-50 rounded-xl outline-none border border-transparent focus:border-indigo-500 transition-all">
-                    </div>
-                    <div class="flex items-center gap-2 w-full sm:w-auto">
-                        <span class="text-sm text-slate-500 whitespace-nowrap">Urutkan:</span>
-                        <select class="p-2 bg-slate-50 rounded-lg outline-none text-sm font-bold border-none">
-                            <option>Terbaru</option>
-                            <option>Rating Tertinggi</option>
-                            <option>Harga Terendah</option>
-                        </select>
-                    </div>
+        <!-- RESULTS GRID -->
+        <div>
+            <!-- Grid -->
+                <div id="creators-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Cards will be injected by JS -->
                 </div>
 
-                <!-- Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                    <!-- Cards Dummy Data -->
-                    <script>
-                        const creators = [
-                            { name: 'Felix Chandra', role: 'Fotografer Wedding', loc: 'Pangkalpinang', price: '1.5jt', seed: 'Felix', img: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=600' },
-                            { name: 'Maya Lestari', role: 'Fotografer Produk', loc: 'Sungailiat', price: '500rb', seed: 'Maya', img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600' },
-                            { name: 'Andi Wijaya', role: 'Editor Video & Drone', loc: 'Koba', price: '750rb', seed: 'Andi', img: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&q=80&w=600' },
-                            { name: 'Siska Pratama', role: 'Fotografer Event', loc: 'Pangkalpinang', price: '1jt', seed: 'Siska', img: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600' },
-                            { name: 'Riky Kurniawan', role: 'Videografer Wedding', loc: 'Belinyu', price: '2.5jt', seed: 'Riky', img: 'https://images.unsplash.com/photo-1492691523565-351052277d3f?auto=format&fit=crop&q=80&w=600' },
-                            { name: 'Dian Safitri', role: 'Banyak Model & Foto Produk', loc: 'Muntok', price: '600rb', seed: 'Dian', img: 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&q=80&w=600' },
-                        ];
+                <script>
+                    const creators = [
+                        { name: 'Felix Chandra', role: 'Fotografer Wedding', loc: 'Pangkalpinang', price: '1.5jt', seed: 'Felix', img: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=600' },
+                        { name: 'Maya Lestari', role: 'Fotografer Produk', loc: 'Sungailiat', price: '500rb', seed: 'Maya', img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600' },
+                        { name: 'Andi Wijaya', role: 'Editor Video & Drone', loc: 'Koba', price: '750rb', seed: 'Andi', img: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&q=80&w=600' },
+                        { name: 'Siska Pratama', role: 'Fotografer Event', loc: 'Pangkalpinang', price: '1jt', seed: 'Siska', img: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600' },
+                        { name: 'Riky Kurniawan', role: 'Videografer Wedding', loc: 'Belinyu', price: '2.5jt', seed: 'Riky', img: 'https://images.unsplash.com/photo-1492691523565-351052277d3f?auto=format&fit=crop&q=80&w=600' },
+                        { name: 'Dian Safitri', role: 'Banyak Model & Foto Produk', loc: 'Muntok', price: '600rb', seed: 'Dian', img: 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&q=80&w=600' },
+                    ];
 
-                        document.write(creators.map(c => `
-                            <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    function renderCreators() {
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const query = urlParams.get('q')?.toLowerCase() || '';
+                        
+                        // Set input value
+                        const searchInput = document.getElementById('search-input');
+                        if (searchInput && query) searchInput.value = query;
+
+                        const grid = document.getElementById('creators-grid');
+                        const filtered = creators.filter(c => 
+                            c.name.toLowerCase().includes(query) || 
+                            c.role.toLowerCase().includes(query) ||
+                            c.loc.toLowerCase().includes(query)
+                        );
+
+                        if (filtered.length === 0) {
+                            grid.innerHTML = `<div class="col-span-full py-20 text-center text-white/50">Tidak ada penjasa yang ditemukan untuk "${query}"</div>`;
+                            return;
+                        }
+
+                        grid.innerHTML = filtered.map(c => `
+                            <div class="group bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                                 <div class="h-48 overflow-hidden relative">
-                                    <img src="${c.img}" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                                    <div class="absolute top-3 left-3 flex gap-2">
-                                        <span class="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-indigo-700 shadow-sm">${c.role.split(' ')[1]}</span>
-                                    </div>
-                                    <div class="absolute bottom-3 right-3">
-                                        <div class="bg-indigo-600 text-white p-2 rounded-full shadow-lg">
-                                            <i data-lucide="star" class="w-3 h-3 fill-current text-white"></i>
-                                        </div>
-                                    </div>
+                                    <img src="${c.img}" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                 </div>
                                 <div class="p-5">
                                     <div class="flex items-center gap-3 mb-4">
-                                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=${c.seed}" alt="Avatar" class="w-12 h-12 rounded-full border-2 border-white shadow-sm ring-2 ring-slate-50">
+                                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=${c.seed}" alt="Avatar" class="w-12 h-12 rounded-2xl border-2 border-white/20 shadow-lg">
                                         <div>
-                                            <h3 class="font-bold text-slate-900">${c.name}</h3>
-                                            <div class="flex items-center text-xs text-slate-500 gap-1">
-                                                <i data-lucide="map-pin" class="w-3 h-3"></i> ${c.loc}
-                                            </div>
+                                            <h3 class="font-bold text-white group-hover:text-indigo-400 transition-colors">${c.name}</h3>
+                                            <div class="text-indigo-400 font-bold text-[10px] uppercase tracking-wider">${c.role.split(' ')[1] || c.role}</div>
                                         </div>
                                     </div>
-                                    <p class="text-xs text-slate-500 mb-4 line-clamp-2">Jasa profesional berpengalaman dengan hasil yang memuaskan dan harga terjangkau.</p>
-                                    <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-                                        <div>
-                                            <div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Mulai dari</div>
-                                            <div class="text-indigo-600 font-bold">Rp ${c.price}</div>
+                                    <p class="text-xs text-white/60 mb-4 line-clamp-2">Jasa profesional berpengalaman dengan hasil yang memuaskan dan harga terjangkau.</p>
+                                    <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                                        <div class="flex items-center text-xs text-white/50 gap-1">
+                                            <i data-lucide="map-pin" class="w-3 h-3 text-indigo-400"></i> ${c.loc}
                                         </div>
-                                        <a href="profile.html" class="px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-xl hover:bg-indigo-600 hover:text-white transition-all">Profil</a>
+                                        <a href="profile.html" class="px-4 py-2 bg-white/5 border border-white/10 text-white text-sm font-bold rounded-xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-lg">Profil</a>
                                     </div>
                                 </div>
                             </div>
-                        `).join(''));
-                    </script>
-                </div>
+                        `).join('');
+                        
+                        // Re-init icons for dynamic content
+                        if (window.lucide) lucide.createIcons();
+                    }
+
+                    // Initial render
+                    renderCreators();
+                </script>
 
                 <!-- Pagination -->
                 <div class="mt-12 flex justify-center gap-2">
-                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:text-indigo-600 transition-all"><i data-lucide="chevron-left"></i></button>
-                    <button class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold">1</button>
-                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-white hover:text-indigo-600 transition-all font-bold">2</button>
-                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-white hover:text-indigo-600 transition-all font-bold">3</button>
-                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:text-indigo-600 transition-all"><i data-lucide="chevron-right"></i></button>
+                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:text-indigo-600 transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg"><i data-lucide="chevron-left"></i></button>
+                    <button class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold shadow-lg shadow-indigo-500/20 active:scale-95">1</button>
+                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-white hover:text-indigo-600 transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg font-bold">2</button>
+                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-white hover:text-indigo-600 transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg font-bold">3</button>
+                    <button class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:text-indigo-600 transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-md hover:shadow-lg"><i data-lucide="chevron-right"></i></button>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-white pt-10 pb-10 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-400 text-sm">&copy; 2026 BangkaLens. All rights reserved. Made for Bangka.</p>
+    <footer class="bg-slate-950 pt-20 pb-12 border-t border-white/5 relative z-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-white/40 text-sm">&copy; 2026 BangkaLens. All rights reserved. Made for Bangka.</p>
         </div>
     </footer>
 
@@ -218,6 +231,24 @@
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Filter Toggle Logic
+        const filterToggle = document.getElementById('filter-toggle');
+        const filterPanel = document.getElementById('filter-panel');
+        const filterReset = document.getElementById('filter-reset');
+
+        filterToggle.addEventListener('click', () => {
+            filterPanel.classList.toggle('hidden');
+            filterToggle.classList.toggle('text-indigo-400');
+            filterToggle.classList.toggle('bg-white/10');
+        });
+
+        filterReset.addEventListener('click', () => {
+            // Reset all checkboxes and selects in the panel
+            filterPanel.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            filterPanel.querySelectorAll('select').forEach(sel => sel.selectedIndex = 0);
+        });
     </script>
+    <script type="module" src="/chatbot.js"></script>
 </body>
 </html>

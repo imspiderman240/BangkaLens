@@ -16,73 +16,91 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-900 text-slate-100 overflow-x-hidden">
+
+    <!-- BACKGROUND WRAPPER -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&q=80&w=1920" 
+             alt="Background" 
+             class="w-full h-full object-cover opacity-40 brightness-75">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-indigo-900/40 to-slate-900/80 backdrop-blur-[4px]"></div>
+    </div>
 
     <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200">
+    <nav class="fixed w-full z-50 border-b border-white/10 bg-black/40 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center gap-2">
-                    <a href="index.html" class="text-2xl font-bold text-indigo-600 tracking-tight">BangkaLens</a>
+                    <a href="index.html" class="text-2xl font-bold text-white tracking-tight">Bangka<span class="text-indigo-400">Lens</span></a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
-                    <a href="explore.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Eksplor</a>
-                    <a href="jobs.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Lowongan</a>
-                    <a href="login.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Masuk</a>
-                    <a href="login.html" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition-all shadow-md active:scale-95">Daftar</a>
+                <div class="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-2xl border border-white/10">
+                    <a href="index.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium hover:-translate-y-0.5 active:scale-95">Home</a>
+                    <a href="explore.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium hover:-translate-y-0.5 active:scale-95">Eksplor</a>
+                    <a href="jobs.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium hover:-translate-y-0.5 active:scale-95">Lowongan</a>
+                    <a href="login.html" class="px-5 py-2 text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 font-medium hover:-translate-y-0.5 active:scale-95">Masuk</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-slate-600 hover:text-indigo-600">
+                    <button id="mobile-menu-button" class="text-white hover:text-indigo-400">
                         <i data-lucide="menu"></i>
                     </button>
                 </div>
             </div>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-white/10 backdrop-blur-xl animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block px-4 py-3 text-white/60 hover:text-white hover:bg-white/5 rounded-xl font-medium transition-all">Home</a>
+                <a href="explore.html" class="block px-4 py-3 text-white/60 hover:text-white hover:bg-white/5 rounded-xl font-medium transition-all">Eksplor</a>
+                <a href="jobs.html" class="block px-4 py-3 text-white/60 hover:text-white hover:bg-white/5 rounded-xl font-medium transition-all">Lowongan</a>
+                <a href="login.html" class="block px-4 py-3 text-indigo-400 font-bold hover:bg-indigo-500/10 rounded-xl transition-all">Masuk</a>
+            </div>
+        </div>
     </nav>
 
-    <main class="pt-24 pb-20">
+    <main class="relative z-10 pt-24 pb-20">
         <!-- HEADER -->
         <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center md:items-start gap-8 relative overflow-hidden">
-                <!-- Decoration -->
-                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
-                
+            <div class="bg-white/10 backdrop-blur-2xl rounded-3xl p-8 border border-white/10 shadow-2xl flex flex-col md:flex-row items-center md:items-start gap-8 relative overflow-hidden">
                 <div class="relative">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Maya" alt="Avatar" class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white shadow-lg ring-4 ring-indigo-50">
-                    <div class="absolute bottom-2 right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-white"></div>
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Maya" alt="Avatar" class="w-32 h-32 md:w-40 md:h-40 rounded-3xl border-4 border-white/20 shadow-2xl">
+                    <div class="absolute bottom-2 right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-slate-900 shadow-lg"></div>
                 </div>
 
                 <div class="flex-1 text-center md:text-left">
                     <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                        <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Maya Lestari</h1>
-                        <span class="inline-flex px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full items-center gap-1 mx-auto md:mx-0">
+                        <h1 class="text-4xl font-extrabold text-white tracking-tight">Maya Lestari</h1>
+                        <span class="inline-flex px-3 py-1 bg-indigo-500/20 text-indigo-400 text-xs font-bold rounded-full items-center gap-1 mx-auto md:mx-0 border border-indigo-500/30">
                             <i data-lucide="check-circle" class="w-3 h-3"></i> Verified Pro
                         </span>
                     </div>
                     
                     <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-6">
-                        <div class="flex items-center gap-1.5 text-slate-500 text-sm font-medium">
-                            <i data-lucide="map-pin" class="w-4 h-4"></i> Sungailiat, Bangka
+                        <div class="flex items-center gap-1.5 text-white/50 text-sm font-medium">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-indigo-400"></i> Sungailiat, Bangka
                         </div>
-                        <div class="flex items-center gap-1.5 text-slate-500 text-sm font-medium">
-                            <i data-lucide="camera" class="w-4 h-4"></i> Fotografer Produk & Editorial
-                        </div>
-                        <div class="flex items-center gap-1.5 text-amber-500 text-sm font-bold">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i> 4.9 (42 Review)
+                        <div class="flex items-center gap-1.5 text-white/50 text-sm font-medium">
+                            <i data-lucide="camera" class="w-4 h-4 text-indigo-400"></i> Fotografer Produk & Editorial
                         </div>
                     </div>
 
-                    <p class="text-slate-600 mb-8 max-w-2xl leading-relaxed">
+                    <p class="text-white/70 mb-8 max-w-2xl leading-relaxed text-lg">
                         Spesialis fotografi produk UMKM dan fashion editorial dengan pengalaman lebih dari 5 tahun di Bangka Belitung. Membantu menaikkan visual brand Anda melalui sudut pandang artistik dan profesional.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-indigo-600 text-white px-8 py-3 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 active:scale-95">
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-indigo-500 transition-all duration-300 shadow-xl hover:shadow-indigo-500/40 hover:-translate-y-1 active:scale-95">
                             <i data-lucide="message-circle" class="w-5 h-5"></i> Hubungi via WhatsApp
                         </button>
-                        <button class="bg-white text-slate-700 border border-slate-200 px-8 py-3 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-slate-50 transition-all active:scale-95">
-                            <i data-lucide="share-2" class="w-5 h-5"></i> Bagikan Profil
+                        <div class="flex gap-2">
+                            <a href="https://instagram.com" target="_blank" class="w-14 h-14 bg-white/5 text-pink-400 rounded-2xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 active:scale-95 border border-white/10 shadow-lg">
+                                <i data-lucide="instagram" class="w-6 h-6"></i>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" class="w-14 h-14 bg-white/5 text-blue-400 rounded-2xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 active:scale-95 border border-white/10 shadow-lg">
+                                <i data-lucide="facebook" class="w-6 h-6"></i>
+                            </a>
+                        </div>
+                        <button class="bg-white/5 text-white border border-white/10 px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-lg">
+                            <i data-lucide="share-2" class="w-5 h-5"></i> Bagikan
                         </button>
                     </div>
                 </div>
@@ -91,20 +109,20 @@
 
         <!-- PORTFOLIO GRID -->
         <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-            <div class="flex items-center justify-between mb-8">
-                <h2 class="text-2xl font-bold text-slate-900 border-b-4 border-indigo-600 pb-1">Portofolio</h2>
-                <div class="flex gap-2">
-                    <button class="px-4 py-1.5 bg-slate-900 text-white rounded-full text-xs font-bold">Semua</button>
-                    <button class="px-4 py-1.5 bg-white text-slate-500 rounded-full text-xs font-medium border border-slate-200 hover:bg-slate-50">Produk</button>
-                    <button class="px-4 py-1.5 bg-white text-slate-500 rounded-full text-xs font-medium border border-slate-200 hover:bg-slate-50">Fashion</button>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+                <h2 class="text-3xl font-bold text-white tracking-tight">Portofolio</h2>
+                <div class="flex bg-white/5 p-1 rounded-2xl border border-white/10">
+                    <button class="px-6 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold transition-all active:scale-95">Semua</button>
+                    <button class="px-6 py-2 text-white/50 rounded-xl text-xs font-medium hover:text-white transition-all duration-300 hover:-translate-y-1 active:scale-95">Produk</button>
+                    <button class="px-6 py-2 text-white/50 rounded-xl text-xs font-medium hover:text-white transition-all duration-300 hover:-translate-y-1 active:scale-95">Fashion</button>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="aspect-square bg-slate-200 rounded-2xl overflow-hidden group cursor-pointer relative">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-indigo-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <i data-lucide="plus" class="w-8 h-8"></i>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="aspect-square bg-white/5 rounded-3xl overflow-hidden group cursor-pointer relative border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-indigo-600/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white backdrop-blur-[2px]">
+                        <i data-lucide="maximize-2" class="w-8 h-8"></i>
                     </div>
                 </div>
                 <div class="aspect-square bg-slate-200 rounded-2xl overflow-hidden group cursor-pointer relative">
@@ -138,76 +156,16 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center">
-                <button class="bg-slate-100 text-slate-600 px-6 py-2.5 rounded-xl font-bold hover:bg-slate-200 transition-colors">Tampilkan Lainnya</button>
-            </div>
-        </section>
-
-        <!-- SERVICE PACKAGES -->
-        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-8">Paket Layanan</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Package 1 -->
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-indigo-600 transition-colors flex flex-col h-full">
-                    <div class="mb-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-1">Katalog UMKM Lite</h3>
-                        <p class="text-slate-500 text-sm">Cocok untuk pemula yang ingin visual rapi.</p>
-                    </div>
-                    <div class="mb-8">
-                        <span class="text-3xl font-extrabold text-indigo-600">Rp 499rb</span>
-                        <span class="text-slate-400 text-sm">/ 5 Produk</span>
-                    </div>
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-slate-600 text-sm">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Studio / Background Polos
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-600 text-sm">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> High-res Digital Files
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-600 text-sm">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Basic Retouching
-                        </li>
-                    </ul>
-                    <button class="w-full bg-slate-900 text-white py-3 rounded-2xl font-bold hover:bg-slate-800 transition-colors">Pilih Paket Ini</button>
-                </div>
-
-                <!-- Package 2 -->
-                <div class="bg-white p-8 rounded-3xl border-2 border-indigo-600 shadow-xl shadow-indigo-50 relative flex flex-col h-full">
-                    <div class="absolute top-0 right-10 -translate-y-1/2">
-                        <span class="bg-indigo-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">Populer</span>
-                    </div>
-                    <div class="mb-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-1">Editorial Premium</h3>
-                        <p class="text-slate-500 text-sm">Visual cinematic untuk branding berkelas.</p>
-                    </div>
-                    <div class="mb-8">
-                        <span class="text-3xl font-extrabold text-indigo-600">Rp 1.2jt</span>
-                        <span class="text-slate-400 text-sm">/ 10 Produk</span>
-                    </div>
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Creative Art Direction
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Pro Lighting & Gear
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Advanced Retouching
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-600 text-sm font-medium">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Promo video 15 detik (Bonus)
-                        </li>
-                    </ul>
-                    <button class="w-full bg-indigo-600 text-white py-3 rounded-2xl font-bold hover:bg-indigo-700 transition-colors shadow-lg active:scale-95">Pilih Paket Ini</button>
-                </div>
+            <div class="mt-12 text-center">
+                <button class="bg-white/5 text-white/70 px-8 py-3 rounded-2xl font-bold hover:bg-white/10 border border-white/10 transition-all duration-300 hover:-translate-y-1 active:scale-95 shadow-lg">Tampilkan Lainnya</button>
             </div>
         </section>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-white pt-10 pb-10 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-400 text-sm">&copy; 2026 BangkaLens. All rights reserved. Made for Bangka.</p>
+    <footer class="bg-slate-950 pt-20 pb-12 border-t border-white/5 relative z-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-white/40 text-sm">&copy; 2026 BangkaLens. All rights reserved. Made for Bangka.</p>
         </div>
     </footer>
 
@@ -221,5 +179,6 @@
             });
         }
     </script>
+    <script type="module" src="/chatbot.js"></script>
 </body>
 </html>
